@@ -174,6 +174,93 @@ body {
     gap: 20px;
 }
 
+/* New About Page Styles */
+.about-container {
+    padding: 40px 5%;
+}
+
+.about-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.about-hero .hero-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.about-mission, .about-team {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.team-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.team-member {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* New Contact Page Styles */
+.contact-container {
+    padding: 40px 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contact-info {
+    background-color: #e8d9c2;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact-form label {
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #d1a87b;
+    border-radius: 5px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+
 /* Footer (Mobile) */
 .footer {
     background-color: #e8d9c2;
@@ -242,6 +329,23 @@ body {
     }
 
     .packages-grid {
+        flex-direction: row;
+    }
+
+    /* About Page (Tablet/Desktop) */
+    .about-hero {
+        flex-direction: row;
+        text-align: left;
+        gap: 40px;
+    }
+
+    .team-grid {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    /* Contact Page (Tablet/Desktop) */
+    .contact-container {
         flex-direction: row;
     }
 }
