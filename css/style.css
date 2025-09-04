@@ -1,3 +1,10 @@
+/*
+    Mobile-First Approach
+    --------------------
+    These styles are the default, and they are optimized for mobile phones.
+    All other layouts will progressively enhance these styles.
+*/
+
 /* General Styles */
 body {
     font-family: 'Playfair Display', serif;
@@ -7,26 +14,22 @@ body {
     line-height: 1.6;
 }
 
-.header, .footer {
-    background-color: #e8d9c2; /* A slightly darker cream */
-    padding: 20px;
-    text-align: center;
-}
-
-/* Header and Navigation */
+/* Header and Navigation (Mobile) */
 .header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     padding: 15px 5%;
+    text-align: center;
 }
 
 .nav-menu ul {
     list-style: none;
-    margin: 0;
+    margin: 10px 0;
     padding: 0;
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .nav-menu a {
@@ -40,29 +43,16 @@ body {
     color: #d1a87b; /* Warm, inviting brown */
 }
 
-/* Login button */
-.login-button {
-    background-color: #d1a87b;
-    color: #fff;
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-weight: normal;
-}
-
-.login-button:hover {
-    background-color: #b78a5e;
-}
-
-/* Search Function */
 .search-container {
-    display: flex;
-    align-items: center;
+    margin-top: 10px;
+    width: 100%;
 }
 
 #search-input {
     border: 1px solid #d1a87b;
     padding: 8px;
     border-radius: 5px;
+    width: 70%;
 }
 
 #search-button {
@@ -75,24 +65,18 @@ body {
     margin-left: 5px;
 }
 
-/* Z-Pattern Layout */
-.main-content {
-    padding: 40px 5%;
-}
-
+/* Homepage Z-Pattern Layout (Mobile) */
 .z-row-1, .z-row-2, .z-row-3 {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 60px;
-}
-
-.z-row-2 {
-    flex-direction: row-reverse; /* Reverses the order for the Z-pattern */
+    margin-bottom: 40px;
 }
 
 .z-item {
     flex: 1;
     padding: 20px;
+    text-align: center;
 }
 
 .z-item img {
@@ -117,9 +101,45 @@ body {
     background-color: #a46d4e;
 }
 
-/* Login Page Specific Styles */
+/* Product Pages (Mobile) */
+.products-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.products-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: #4a3e30;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Login Page Specific Styles (Mobile) */
 .login-page-body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -129,118 +149,17 @@ body {
 .login-container {
     width: 90%;
     max-width: 400px;
-    padding: 40px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    text-align: center;
+    padding: 30px;
 }
 
-.login-icon {
-    font-size: 50px;
-    color: #c78f6f;
-    margin-bottom: 20px;
-}
-
-.login-form h2 {
-    margin-bottom: 30px;
-    color: #4a3e30;
-}
-
-.input-group {
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #d1a87b;
-    border-radius: 5px;
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
-}
-
-.login-form .cta-button {
-    width: 100%;
-    border: none;
-    cursor: pointer;
-}
-/* Product Page Layout */
-.products-container {
-    padding: 40px 5%;
-    text-align: center;
-}
-
-.section-description {
-    font-style: italic;
-    color: #6a5a4a;
-    margin-bottom: 40px;
-}
-
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    justify-content: center;
-}
-
-.product-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-decoration: none;
-    color: #4a3e30;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-.product-card img {
-    width: 100%;
-    height: 200px; /* Consistent image height for the grid */
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.product-card h3 {
-    margin: 0 0 10px;
-    font-size: 1.5em;
-}
-
-.product-card p {
-    font-size: 1em;
-    color: #6a5a4a;
-}
-/* Catering Page Specific Styles */
-.catering-page-container {
-    padding: 40px 5%;
-}
-
+/* Catering Page Specific Styles (Mobile) */
 .catering-hero {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 40px;
-    margin-bottom: 60px;
-}
-
-.catering-hero .hero-text {
-    flex: 1;
+    gap: 20px;
+    margin-bottom: 40px;
     text-align: center;
-}
-
-.catering-hero .hero-image {
-    flex: 1;
 }
 
 .catering-hero .hero-image img {
@@ -249,46 +168,93 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.catering-packages {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
 .packages-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.package-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.package-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-.package-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.package-card h4 {
-    margin: 0 0 10px;
-}
-
-.catering-cta {
-    text-align: center;
+/* Footer (Mobile) */
+.footer {
     background-color: #e8d9c2;
-    padding: 40px;
-    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+/*
+    Media Queries
+    -------------
+    These styles will only be applied on screens larger than a certain size,
+    progressively enhancing the layout for tablets and desktops.
+*/
+
+/* Medium screens (tablets) and up */
+@media (min-width: 768px) {
+    /* Header and Navigation (Tablet/Desktop) */
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-menu ul {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    /* Z-Pattern (Tablet/Desktop) */
+    .z-row-1, .z-row-2, .z-row-3 {
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+    
+    .z-row-2 {
+        flex-direction: row-reverse;
+    }
+
+    .z-item {
+        flex: 1;
+        text-align: left;
+    }
+    
+    /* Product Pages (Tablet/Desktop) */
+    .products-grid {
+        flex-direction: row;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+    }
+    
+    .product-card {
+        padding: 20px;
+    }
+
+    .product-card img {
+        height: 200px;
+    }
+
+    /* Catering Page (Tablet/Desktop) */
+    .catering-hero {
+        flex-direction: row;
+        text-align: left;
+        gap: 40px;
+    }
+
+    .packages-grid {
+        flex-direction: row;
+    }
+}
+
+/* Large screens (desktops) and up */
+@media (min-width: 1024px) {
+    /* Product Pages (Desktop) */
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Catering Page (Desktop) */
+    .packages-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
